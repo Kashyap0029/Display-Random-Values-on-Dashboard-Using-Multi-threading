@@ -8,8 +8,8 @@ The application models independent asynchronous processes and integrates them wi
 ---
 
 ## Demo Video
-A demonstration of the application can be viewed here:
-[Watch Demo Video](dashboard demo.mp4)
+A demonstration of the application is provided below:  
+[View Demo Video](dashboard%20demo.mp4)
 
 ---
 
