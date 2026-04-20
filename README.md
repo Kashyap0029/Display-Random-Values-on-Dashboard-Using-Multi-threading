@@ -1,51 +1,49 @@
 # Multithreaded Flask Dashboard
 
 ## Overview
-This project is a Flask-based web application that demonstrates the use of multithreading to generate and display real-time data. The application continuously produces random numbers across multiple predefined ranges, each updated at different time intervals, and visualizes them in a dynamic dashboard.
+This project is a lightweight Flask-based web application designed to demonstrate concurrent data generation using multithreading in Python. The system continuously generates random numbers across multiple predefined ranges, each operating at distinct refresh intervals, and visualizes them in a dynamically updating web dashboard.
 
-The system simulates concurrent data generation and provides a simple interface to observe how independent processes operate simultaneously in a web environment.
-
----
-
-## Objectives
-- To demonstrate the concept of multithreading in Python
-- To simulate concurrent data generation with different execution intervals
-- To integrate backend processing with a real-time web interface
-- To build a lightweight dashboard using Flask
+The application models independent asynchronous processes and integrates them with a client-facing interface using a simple REST-based architecture.
 
 ---
 
-## Features
-- Real-time updating dashboard
-- Six independent data streams
-- Each stream operates with:
-  - A unique numeric range
-  - A distinct refresh interval
-- Clean and structured web interface
-- Backend implemented using Flask
-- Concurrent execution using Python threading
+## Demo Video
+A demonstration of the application can be viewed here:
+
+
 
 ---
 
-## Why Multithreading is Used
-Multithreading is used to allow multiple tasks to run concurrently within the same application. In this project, each data stream is handled by a separate thread.
+## Key Features
+- Concurrent data generation using multiple threads
+- Independent refresh intervals for each data stream
+- Real-time dashboard updates without page reload
+- Clear separation of backend processing and frontend visualization
+- Minimal and efficient system design for demonstration purposes
 
-Each thread:
-- Generates random numbers within a specified range
-- Updates its assigned position in shared memory
-- Operates at its own refresh interval
+---
 
-Without multithreading, these tasks would execute sequentially, causing delays and preventing independent updates. Multithreading ensures that all data streams are updated asynchronously, improving responsiveness and accurately simulating real-time systems.
+## Motivation for Multithreading
+The core requirement of this application is to simulate multiple independent processes that update at different time intervals. Implementing this sequentially would introduce blocking behavior, where one task delays the execution of others.
+
+Multithreading addresses this limitation by enabling parallel execution of tasks within a single process. Each thread operates independently, allowing:
+- Asynchronous updates of multiple data streams
+- Improved responsiveness of the system
+- Accurate simulation of real-time concurrent processes
 
 ---
 
 ## System Architecture
 
-### Backend (Flask)
-- Runs multiple threads
-- Maintains shared data structure
-- Provides API endpoint (`/data`) to serve current values
+### Backend (Flask + Threading)
+- Initializes and manages multiple worker threads
+- Maintains a shared in-memory data structure
+- Exposes a REST endpoint (`/data`) for retrieving current values
 
 ### Frontend (HTML, CSS, JavaScript)
-- Requests data periodically from the backend
-- Updates the dashboard dynamically without page reload
+- Periodically fetches data from the backend using HTTP requests
+- Updates the user interface dynamically without reloading the page
+
+---
+
+## Project Structure
