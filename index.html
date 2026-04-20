@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 300px);
+            gap: 30px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .box {
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .value {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .info {
+            font-size: 14px;
+            margin-top: 10px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Live Random Dashboard</h2>
+
+<div class="grid">
+    <div class="box">
+        <div class="value" id="b0">0</div>
+        <div class="info">Range: [10, 20] | Refresh: 10s</div>
+    </div>
+
+    <div class="box">
+        <div class="value" id="b1">0</div>
+        <div class="info">Range: [-10, 10] | Refresh: 20s</div>
+    </div>
+
+    <div class="box">
+        <div class="value" id="b2">0</div>
+        <div class="info">Range: [-100, 0] | Refresh: 8s</div>
+    </div>
+
+    <div class="box">
+        <div class="value" id="b3">0</div>
+        <div class="info">Range: [0, 20] | Refresh: 12s</div>
+    </div>
+
+    <div class="box">
+        <div class="value" id="b4">0</div>
+        <div class="info">Range: [-40, 40] | Refresh: 16s</div>
+    </div>
+
+    <div class="box">
+        <div class="value" id="b5">0</div>
+        <div class="info">Range: [100, 200] | Refresh: 14s</div>
+    </div>
+</div>
+
+<script>
+function fetchData() {
+    fetch('/data')
+    .then(res => res.json())
+    .then(data => {
+        data.forEach((val, i) => {
+            document.getElementById("b"+i).innerText = val;
+        });
+    });
+}
+
+setInterval(fetchData, 1000);
+</script>
+
+</body>
+</html>
