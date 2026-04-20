@@ -9,7 +9,7 @@ The application models independent asynchronous processes and integrates them wi
 
 ## Demo Video
 A demonstration of the application can be viewed here:
-[Watch Demo Video](dashboard_demo.mp4)
+[Watch Demo Video](dashboard demo.mp4)
 
 ---
 
