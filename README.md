@@ -45,5 +45,3 @@ Multithreading addresses this limitation by enabling parallel execution of tasks
 - Updates the user interface dynamically without reloading the page
 
 ---
-
-## Project Structure
